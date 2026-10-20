@@ -79,18 +79,18 @@ const dealersData = [
     logo: "/NATIONAL MARKETING REAL ESTATE & BUILDERS.jpg"
   },
   {
-    name: "WALL.PK",
-    type: "Authorized Sales Partner",
-    location: "Lahore, Pakistan",
-    description: "Leading digital real estate network and authorized sales partner offering innovative marketing, transparent property advisory, and high-yield investment options at Royal Swiss City.",
-    logo: "/WALL.PK.jpg"
-  },
-  {
     name: "REHMAN PROPERTIES & MARKETING",
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Trusted real estate and marketing experts delivering bespoke property guidance, reliable plot bookings, and strategic investor support across Royal Swiss City.",
     logo: "/REHMAN PROPERTIES & MARKETING.jpg"
+  },
+  {
+    name: "WALL.PK",
+    type: "Authorized Sales Partner",
+    location: "Lahore, Pakistan",
+    description: "Leading digital real estate network and authorized sales partner offering innovative marketing, transparent property advisory, and high-yield investment options at Royal Swiss City.",
+    logo: "/WALL.PK.jpg"
   },
   {
     name: "BURHAN REAL ESTATE",
@@ -693,7 +693,6 @@ export default function Home() {
                   <div className="partner-card-name">{dealer.name}</div>
                   <div className="partner-card-type">{dealer.type}</div>
                 </div>
-                <div className="partner-card-badge">TAP FOR MORE</div>
               </div>
             ))}
           </div>
@@ -729,7 +728,6 @@ export default function Home() {
                     <div className="partner-card-name">{dealer.name}</div>
                     <div className="partner-card-type">{dealer.type}</div>
                   </div>
-                  <div className="partner-card-badge">TAP FOR MORE</div>
                 </div>
               ))}
             </div>
