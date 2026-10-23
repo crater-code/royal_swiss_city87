@@ -201,7 +201,7 @@ export default function Developer() {
               </div>
               <div className="legacy-card__divider"></div>
               <div className="legacy-card__content">
-                <small>CHIEF EXECUTIVE</small>
+                <small>CHIEF EXECUTIVE OFFICER</small>
                 <h3 style={{ textTransform: "uppercase" }}>SOHAIB HASSAN</h3>
                 <div className="legacy-card__decoration">
                   <span></span>
@@ -216,7 +216,7 @@ export default function Developer() {
                 </div>
                 <p style={{ fontSize: "12px", lineHeight: "1.6", color: "#666", margin: "0 0 16px 0" }}>It is a privilege to carry forward the legacy of Habib Rafiq Construction, developing sustainable communities that enhance lifestyles and create lasting value.</p>
                 <div className="legacy-card__signature">
-                  <p>CHIEF EXECUTIVE</p>
+                  <p>CHIEF EXECUTIVE OFFICER</p>
                 </div>
                 <div className="legacy-card__watermark">HRL CONSTRUCTION PVT LIMITED</div>
               </div>
@@ -242,7 +242,7 @@ export default function Developer() {
                 <img src={img.ceo} alt="Sohaib Hassan - CEO Habib Rafiq Construction, Leading Next Generation Development" style={{ width: "100%", height: "100%", objectFit: "cover" }} loading="lazy" />
               </div>
               <h4 style={{ fontSize: "13px", fontWeight: 400, color: "#b2996a", margin: "0 0 3px 0", fontFamily: "var(--serif)", letterSpacing: "0.05em", textTransform: "uppercase" }}>Sohaib Hassan</h4>
-              <p style={{ fontSize: "10px", color: "#b2996a", margin: "0", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "var(--serif)", fontWeight: 300 }}>Chief Executive</p>
+              <p style={{ fontSize: "10px", color: "#b2996a", margin: "0", textTransform: "uppercase", letterSpacing: "0.08em", fontFamily: "var(--serif)", fontWeight: 300 }}>Chief Executive Officer</p>
             </div>
           </div>
         )}
