@@ -3951,8 +3951,258 @@ p,
 }
 
 /* ==========================================================================
-   Authorized Dealers & Sales Partners Section Styles
+   Our Partners Section & Automatic Moving Carousel
    ========================================================================== */
+
+.partner-section {
+    position: relative !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    padding: clamp(60px, 8vw, 100px) 0 clamp(50px, 6vw, 80px) !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+}
+
+.partner-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
+}
+
+.partner-section-title {
+    font-family: var(--sans, 'Manrope', -apple-system, BlinkMacSystemFont, sans-serif) !important;
+    font-size: clamp(28px, 3.6vw, 42px) !important;
+    font-weight: 700 !important;
+    color: #1a3a52 !important; /* Royal Swiss City signature Navy Blue */
+    text-align: center !important;
+    margin: 0 0 clamp(32px, 4.5vw, 52px) 0 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+}
+
+.partner-carousel-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    overflow: hidden !important;
+    padding: 16px 0 24px !important;
+}
+
+/* Gradient edge fades for seamless entry/exit */
+.partner-carousel-fade {
+    position: absolute !important;
+    top: 0 !important;
+    bottom: 0 !important;
+    width: clamp(40px, 8vw, 120px) !important;
+    z-index: 2 !important;
+    pointer-events: none !important;
+}
+
+.partner-carousel-fade-left {
+    left: 0 !important;
+    background: linear-gradient(to right, #ffffff 15%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+.partner-carousel-fade-right {
+    right: 0 !important;
+    background: linear-gradient(to left, #ffffff 15%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+.partner-carousel-track {
+    display: flex !important;
+    width: max-content !important;
+    align-items: center !important;
+    user-select: none !important;
+}
+
+.partner-carousel-group {
+    display: flex !important;
+    gap: clamp(20px, 2.8vw, 36px) !important;
+    padding-right: clamp(20px, 2.8vw, 36px) !important;
+    flex-shrink: 0 !important;
+    will-change: transform !important;
+    animation: partnerScrollLeft 32s linear infinite !important;
+}
+
+/* Pause smoothly when user hovers or interacts */
+.partner-carousel-wrapper:hover .partner-carousel-group {
+    animation-play-state: paused !important;
+}
+
+@keyframes partnerScrollLeft {
+    0% {
+        transform: translate3d(0, 0, 0);
+    }
+    100% {
+        transform: translate3d(-100%, 0, 0);
+    }
+}
+
+/* Individual Partner Tile (Icons Only) */
+.partner-tile {
+    width: clamp(200px, 18vw, 270px) !important;
+    height: clamp(110px, 11vw, 145px) !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    padding: 8px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    cursor: pointer !important;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.28s ease !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
+    position: relative !important;
+}
+
+.partner-tile:hover {
+    transform: scale(1.12) !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.partner-tile-logo-wrap {
+    width: 100% !important;
+    height: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+}
+
+.partner-tile-logo-wrap img {
+    max-width: 100% !important;
+    max-height: 100% !important;
+    width: auto !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+    transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.partner-tile:hover .partner-tile-logo-wrap img {
+    transform: scale(1.05) !important;
+}
+
+/* Burhan Real Estate logo scale boost to match visual weight of other logos */
+.partner-tile-logo-wrap img[src*="BURHAN"] {
+    max-height: calc(100% - 3px) !important;
+    transform: scale(1.35) !important;
+    transform-origin: center center !important;
+}
+
+.partner-tile:hover .partner-tile-logo-wrap img[src*="BURHAN"] {
+    transform: scale(1.42) !important;
+}
+
+/* Call to action below carousel */
+.partner-cta-wrap {
+    text-align: center !important;
+    margin-top: clamp(28px, 4vw, 44px) !important;
+    font-size: 14px !important;
+    color: #555555 !important;
+    padding: 0 16px !important;
+}
+
+.partner-cta-wrap a.partner-apply-link {
+    color: #1a3a52 !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    margin-left: 6px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    transition: color 0.2s ease, transform 0.2s ease !important;
+}
+
+.partner-cta-wrap a.partner-apply-link:hover {
+    color: #0d1b2a !important;
+    text-decoration: underline !important;
+    transform: translateX(3px) !important;
+}
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    .partner-section {
+        padding: 48px 0 38px !important;
+    }
+
+    .partner-section-title {
+        font-size: 26px !important;
+        margin-bottom: 24px !important;
+    }
+
+    .partner-carousel-wrapper {
+        padding: 12px 0 !important;
+    }
+
+    .partner-carousel-fade {
+        width: 36px !important;
+    }
+
+    .partner-carousel-group {
+        animation-duration: 26s !important;
+        gap: 32px !important;
+        padding-right: 32px !important;
+    }
+
+    .partner-tile {
+        width: 210px !important;
+        height: 130px !important;
+        padding: 6px 10px !important;
+    }
+
+    .partner-tile-logo-wrap {
+        width: 100% !important;
+        height: 100% !important;
+    }
+
+    .partner-tile-logo-wrap img {
+        max-width: 100% !important;
+        max-height: 125px !important;
+        width: auto !important;
+        height: auto !important;
+        object-fit: contain !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="BURHAN"] {
+        max-height: 119px !important;
+        transform: scale(1.36) !important;
+        transform-origin: center center !important;
+    }
+
+    .partner-cta-wrap {
+        font-size: 13px !important;
+        margin-top: 28px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .partner-carousel-group {
+        gap: 26px !important;
+        padding-right: 26px !important;
+    }
+
+    .partner-tile {
+        width: 195px !important;
+        height: 120px !important;
+        padding: 4px 6px !important;
+    }
+
+    .partner-tile-logo-wrap img {
+        max-height: 115px !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="BURHAN"] {
+        max-height: 109px !important;
+    }
+}
 
 .partner-section-subtitle {
     font-family: var(--sans, 'Manrope', sans-serif) !important;

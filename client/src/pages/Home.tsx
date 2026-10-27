@@ -97,7 +97,7 @@ const dealersData = [
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Distinguished property consultants committed to excellence, assisting clients and investors with premier residential and commercial plots at Royal Swiss City.",
-    logo: "/BURHAN REAL ESTATE.jpg"
+    logo: "/BURHAN REAL ESTATE.jpg?v=3"
   }
 ];
 
@@ -638,103 +638,71 @@ export default function Home() {
       </div>
     </section>
 
-    {!isMobile && (
-      <section id="partner" className="partner-strip reveal-section" style={{ backgroundColor: "#FAFAFA", backgroundPosition: "center -150px" }}>
-        {/* Top Row: Picture on Left, Text on Right aligned in a straight line */}
-        <div style={{ display: "grid", gridTemplateColumns: "38% 1fr", gap: "clamp(36px, 5vw, 68px)", width: "100%", maxWidth: "1160px", alignItems: "center", margin: "0 auto 50px" }}>
-          <div style={{ width: "100%", borderRadius: "8px", overflow: "hidden", boxShadow: "0 10px 30px rgba(0,0,0,0.15)" }}>
-            <img 
-              src={img.partnership} 
-              alt="Royal Swiss City Partnership Network - Sales Partners and Dealers" 
-              style={{ width: "100%", height: "350px", objectFit: "cover", display: "block" }} 
-              loading="lazy" 
-            />
-          </div>
-          <div>
-            <p className="section-kicker" style={{ color: "#1a3a52", marginBottom: "8px" }}>PARTNERSHIP</p>
-            <h2 style={{ color: "#1a3a52", fontFamily: "var(--serif)", fontSize: "clamp(32px, 4vw, 52px)", fontWeight: 300, lineHeight: 1, margin: "0 0 20px" }}>
-              PARTNER WITH US<br />
-            </h2>
-            <p style={{ color: "#1a3a52", fontSize: "14px", lineHeight: 1.75, maxWidth: "480px", margin: "0 0 24px" }}>
-              Join the Royal Swiss City partner network and help your clients find a place they'll be proud to call home. We'll give you the tools, support, and information you need to guide them with confidence.
-            </p>
-            <a 
-              className="outline-cta" 
-              href="/enquire" 
-              style={{ transition: "all 0.3s ease", background: "#1a3a52", color: "#fff", borderColor: "#1a3a52" }} 
-              onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} 
-              onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}
-            >
-              APPLY FOR PARTNERSHIP
-            </a>
-          </div>
-        </div>
+    <section id="partner" className="partner-section reveal-section">
+      <div className="partner-container">
+        <h2 className="partner-section-title">Our Partners</h2>
 
-        {/* Bottom: 4 Authorized Dealers Centered Under Both Picture and Text */}
-        <div style={{ width: "100%", maxWidth: "1160px", margin: "0 auto", textAlign: "center" }}>
-          <h3 className="partner-section-subtitle">
-            AUTHORIZED DEALERS & SALES PARTNERS
-          </h3>
-          <div className="partner-cards-grid">
-            {dealersData.slice(0, 4).map((dealer, i) => (
-              <div 
-                key={i} 
-                className="partner-card"
-                onClick={() => setSelectedDealer(dealer)}
-              >
-                <div className="partner-card-logo-wrap">
-                  {dealer.logo ? (
-                    <img src={dealer.logo} alt={dealer.name} loading="lazy" />
-                  ) : (
-                    <span style={{ fontSize: "10px", color: "#1a3a52" }}>Logo</span>
-                  )}
-                </div>
-                <div className="partner-card-info">
-                  <div className="partner-card-name">{dealer.name}</div>
-                  <div className="partner-card-type">{dealer.type}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
+        <div className="partner-carousel-wrapper">
+          <div className="partner-carousel-fade partner-carousel-fade-left" aria-hidden="true" />
+          <div className="partner-carousel-fade partner-carousel-fade-right" aria-hidden="true" />
 
-    {isMobile && (
-      <section id="partner" className="partner-strip" style={{ backgroundColor: "#FAFAFA", backgroundPosition: "center -150px", marginTop: "300px" }}>
-        <img src={img.partnership} alt="Royal Swiss City Partnership Network - Sales Partners and Dealers" style={{ marginTop: "-370px", width: "100%", height: "auto" }} loading="lazy" />
-        <div>
-          <p className="section-kicker" style={{ color: "#1a3a52" }}>PARTNERSHIP</p>
-          <h2 style={{ color: "#1a3a52", fontFamily: "var(--serif)", fontSize: "clamp(32px, 4vw, 55px)", fontWeight: 300, lineHeight: 0.9, margin: "0 0 24px" }}>PARTNER WITH US<br /></h2>
-          <p style={{ color: "#1a3a52" }}>Join the Royal Swiss City partner network and help your clients find a place they'll be proud to call home. We'll give you the tools, support, and information you need to guide them with confidence.</p>
-          <a className="outline-cta" href="/enquire" style={{ transition: "all 0.3s ease", background: "#1a3a52", color: "#fff", borderColor: "#1a3a52" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>APPLY FOR PARTNERSHIP</a>
-          <div style={{ marginTop: "40px" }}>
-            <h3 className="partner-section-subtitle">AUTHORIZED DEALERS & SALES PARTNERS</h3>
-            <div className="partner-cards-grid">
-              {dealersData.slice(0, 4).map((dealer, i) => (
+          <div className="partner-carousel-track">
+            {/* First group of tiles */}
+            <div className="partner-carousel-group">
+              {[...dealersData, ...dealersData, ...dealersData].map((dealer, i) => (
                 <div 
-                  key={i} 
-                  className="partner-card"
+                  key={`group1-${i}`} 
+                  className="partner-tile"
                   onClick={() => setSelectedDealer(dealer)}
+                  role="button"
+                  tabIndex={0}
+                  title={dealer.name}
+                  aria-label={dealer.name}
                 >
-                  <div className="partner-card-logo-wrap">
+                  <div className="partner-tile-logo-wrap">
                     {dealer.logo ? (
                       <img src={dealer.logo} alt={dealer.name} loading="lazy" />
                     ) : (
-                      <span style={{ fontSize: "9px", color: "#1a3a52" }}>Logo</span>
+                      <span style={{ fontSize: "12px", color: "#256131", fontWeight: 700 }}>{dealer.name}</span>
                     )}
                   </div>
-                  <div className="partner-card-info">
-                    <div className="partner-card-name">{dealer.name}</div>
-                    <div className="partner-card-type">{dealer.type}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Second identical group of tiles for seamless infinite right-to-left loop */}
+            <div className="partner-carousel-group" aria-hidden="true">
+              {[...dealersData, ...dealersData, ...dealersData].map((dealer, i) => (
+                <div 
+                  key={`group2-${i}`} 
+                  className="partner-tile"
+                  onClick={() => setSelectedDealer(dealer)}
+                  role="button"
+                  tabIndex={0}
+                  title={dealer.name}
+                  aria-label={dealer.name}
+                >
+                  <div className="partner-tile-logo-wrap">
+                    {dealer.logo ? (
+                      <img src={dealer.logo} alt={dealer.name} loading="lazy" />
+                    ) : (
+                      <span style={{ fontSize: "12px", color: "#256131", fontWeight: 700 }}>{dealer.name}</span>
+                    )}
                   </div>
                 </div>
               ))}
             </div>
           </div>
         </div>
-      </section>
-    )}
+
+        <div className="partner-cta-wrap">
+          <span>Interested in joining our partner network? </span>
+          <a href="/enquire" className="partner-apply-link">
+            Apply for Partnership →
+          </a>
+        </div>
+      </div>
+    </section>
     <footer className="walk-footer reveal-section" style={{ backgroundImage: window.innerWidth > 768 ? "url('/footer_bg_desktop.jpeg')" : "url('/footer_bg_mobile.jpeg')", backgroundSize: "cover", backgroundPosition: window.innerWidth > 768 ? "center -300px" : "center", backgroundRepeat: "no-repeat" }}><div className="footer-accordions">{footerLinks.map(item => {
       let learnMoreLink = "";
       if (item === "The City") learnMoreLink = "/the-city";
