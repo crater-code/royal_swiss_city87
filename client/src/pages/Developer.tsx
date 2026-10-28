@@ -340,29 +340,56 @@ export default function Developer() {
 
     <footer className="walk-footer reveal-section" style={{ backgroundImage: window.innerWidth > 768 ? "url('/footer_bg_desktop.jpeg')" : "url('/footer_bg_mobile.jpeg')", backgroundSize: "cover", backgroundPosition: window.innerWidth > 768 ? "center -300px" : "center", backgroundRepeat: "no-repeat" }}>
       <div className="footer-accordions">
-        {[
-          { title: "ABOUT HRL CONSTRUCTION PVT LIMITED", description: "Habib Rafiq Construction (Pvt) Ltd has been at the forefront of engineering and construction in Pakistan for over 60 years. Our expertise spans infrastructure, buildings, industrial, aviation, power & energy, oil & gas, and environmental projects.", link: "" },
-          { title: "OUR EXPERTISE", description: "We have successfully delivered complex projects including motorways, airports, high-rise buildings, housing schemes, and infrastructure across national and international scale. Our portfolio demonstrates excellence in engineering, quality, and sustainability.", link: "" },
-          { title: "ROYAL SWISS CITY", description: "Royal Swiss City represents our evolution into premium residential development. Combining decades of engineering expertise with modern planning, we've created a master-planned community with world-class infrastructure and amenities.", link: "/the-city" },
-          { title: "SUSTAINABILITY", description: "We are committed to sustainable development. Royal Swiss City features solar infrastructure, comprehensive water management, and environmental conservation as core principles.", link: "" },
-          { title: "PARTNERSHIP", description: "We welcome strategic partnerships in real estate development and infrastructure projects. Our track record and expertise make us a trusted partner for large-scale initiatives.", link: "" },
-          { title: "CONTACT", description: "For inquiries about our projects, partnerships, or development services, please reach out to us at 042-111-777-588 or royalswisscity@gmail.com.", link: "" }
-        ].map(item => (
-          <div className={openFooterItem === item.title ? "open" : ""} key={item.title}>
-            <button onClick={() => setOpenFooterItem(openFooterItem === item.title ? null : item.title)}>
-              {item.title}
-              <ChevronDown size={14} />
-            </button>
-            {openFooterItem === item.title && (
-              <div>
-                <p style={{ whiteSpace: "pre-line" }}>{item.description}</p>
-                {item.link && (
-                  <a href={item.link} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>LEARN MORE →</a>
-                )}
-              </div>
-            )}
-          </div>
-        ))}
+        <div className="footer-accordion-col">
+          {[
+            { title: "ABOUT HRL CONSTRUCTION PVT LIMITED", description: "Habib Rafiq Construction (Pvt) Ltd has been at the forefront of engineering and construction in Pakistan for over 60 years. Our expertise spans infrastructure, buildings, industrial, aviation, power & energy, oil & gas, and environmental projects.", link: "" },
+            { title: "OUR EXPERTISE", description: "We have successfully delivered complex projects including motorways, airports, high-rise buildings, housing schemes, and infrastructure across national and international scale. Our portfolio demonstrates excellence in engineering, quality, and sustainability.", link: "" },
+            { title: "ROYAL SWISS CITY", description: "Royal Swiss City represents our evolution into premium residential development. Combining decades of engineering expertise with modern planning, we've created a master-planned community with world-class infrastructure and amenities.", link: "/the-city" },
+            { title: "SUSTAINABILITY", description: "We are committed to sustainable development. Royal Swiss City features solar infrastructure, comprehensive water management, and environmental conservation as core principles.", link: "" },
+            { title: "PARTNERSHIP", description: "We welcome strategic partnerships in real estate development and infrastructure projects. Our track record and expertise make us a trusted partner for large-scale initiatives.", link: "" },
+            { title: "CONTACT", description: "For inquiries about our projects, partnerships, or development services, please reach out to us at 042-111-777-588 or royalswisscity@gmail.com.", link: "" }
+          ].filter((_, i) => i % 2 === 0).map(item => (
+            <div className={openFooterItem === item.title ? "open" : ""} key={item.title}>
+              <button onClick={() => setOpenFooterItem(openFooterItem === item.title ? null : item.title)}>
+                {item.title}
+                <ChevronDown size={14} />
+              </button>
+              {openFooterItem === item.title && (
+                <div>
+                  <p style={{ whiteSpace: "pre-line" }}>{item.description}</p>
+                  {item.link && (
+                    <a href={item.link} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>LEARN MORE →</a>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+        <div className="footer-accordion-col">
+          {[
+            { title: "ABOUT HRL CONSTRUCTION PVT LIMITED", description: "Habib Rafiq Construction (Pvt) Ltd has been at the forefront of engineering and construction in Pakistan for over 60 years. Our expertise spans infrastructure, buildings, industrial, aviation, power & energy, oil & gas, and environmental projects.", link: "" },
+            { title: "OUR EXPERTISE", description: "We have successfully delivered complex projects including motorways, airports, high-rise buildings, housing schemes, and infrastructure across national and international scale. Our portfolio demonstrates excellence in engineering, quality, and sustainability.", link: "" },
+            { title: "ROYAL SWISS CITY", description: "Royal Swiss City represents our evolution into premium residential development. Combining decades of engineering expertise with modern planning, we've created a master-planned community with world-class infrastructure and amenities.", link: "/the-city" },
+            { title: "SUSTAINABILITY", description: "We are committed to sustainable development. Royal Swiss City features solar infrastructure, comprehensive water management, and environmental conservation as core principles.", link: "" },
+            { title: "PARTNERSHIP", description: "We welcome strategic partnerships in real estate development and infrastructure projects. Our track record and expertise make us a trusted partner for large-scale initiatives.", link: "" },
+            { title: "CONTACT", description: "For inquiries about our projects, partnerships, or development services, please reach out to us at 042-111-777-588 or royalswisscity@gmail.com.", link: "" }
+          ].filter((_, i) => i % 2 === 1).map(item => (
+            <div className={openFooterItem === item.title ? "open" : ""} key={item.title}>
+              <button onClick={() => setOpenFooterItem(openFooterItem === item.title ? null : item.title)}>
+                {item.title}
+                <ChevronDown size={14} />
+              </button>
+              {openFooterItem === item.title && (
+                <div>
+                  <p style={{ whiteSpace: "pre-line" }}>{item.description}</p>
+                  {item.link && (
+                    <a href={item.link} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>LEARN MORE →</a>
+                  )}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
       <div className="footer-socials">
         <a href="https://instagram.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Instagram"><Instagram size={24} /></a>

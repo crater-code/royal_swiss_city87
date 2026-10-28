@@ -977,8 +977,15 @@ p,
     letter-spacing: .08em
 }
 
-.footer-accordions>div {
-    border-bottom: 1px solid rgba(26, 58, 82, 0.3)
+.footer-accordions > div:not(.footer-accordion-col),
+.footer-accordion-col > div {
+    border-bottom: 1px solid rgba(26, 58, 82, 0.3);
+}
+
+.footer-accordion-col {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .footer-accordions button {
@@ -1262,7 +1269,8 @@ p,
     .footer-accordions {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        column-gap: 40px
+        column-gap: 40px;
+        align-items: start;
     }
 
     .partner-strip {
@@ -2877,34 +2885,6 @@ p,
         .mobile-plot-options p {
             font-size: 5px !important;
         }
-
-        .sustainability-icons-grid {
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 12px !important;
-            margin-top: 30px !important;
-            margin-bottom: 30px !important;
-            padding: 0 12px !important;
-            grid-template-columns: none !important;
-        }
-
-        .sustainability-icons-grid > div {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-        }
-
-        .sustainability-icons-grid h3 {
-            font-size: 8px !important;
-        }
-
-        .sustainability-icons-grid p {
-            font-size: 7px !important;
-        }
-    }
-
-    .sustainability-icons-grid {
-        display: grid;
     }
 
     .partner-strip {
@@ -2966,6 +2946,112 @@ p,
     .footer-socials a {
         width: 32px;
         height: 32px;
+    }
+}
+
+/* ==========================================================================
+   Sustainability Icons Grid (The Future Section)
+   ========================================================================== */
+
+.sustainability-icons-grid {
+    display: grid !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: clamp(16px, 2.5vw, 32px) !important;
+    margin-top: clamp(48px, 6vw, 85px) !important;
+    margin-bottom: 0px !important;
+    text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 0 !important;
+}
+
+.sustainability-icon-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: center !important;
+    min-width: 0 !important;
+}
+
+.sustainability-icon-circle {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 54px !important;
+    height: 54px !important;
+    border-radius: 50% !important;
+    border: 1.5px solid #b2996a !important;
+    margin-bottom: 10px !important;
+    background: transparent !important;
+    transition: transform 0.25s ease, border-color 0.25s ease !important;
+    flex-shrink: 0 !important;
+}
+
+.sustainability-icon-item:hover .sustainability-icon-circle {
+    transform: translateY(-2px) !important;
+    border-color: #1a3a52 !important;
+}
+
+/* Reduced size of text under icons on PC */
+.sustainability-icon-title {
+    font-family: var(--sans, 'Manrope', -apple-system, sans-serif) !important;
+    font-size: 9.5px !important;
+    font-weight: 600 !important;
+    color: #1a3a52 !important;
+    margin: 0 0 3px 0 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.08em !important;
+    line-height: 1.3 !important;
+}
+
+/* Description text: kept on PC with reduced font size */
+.sustainability-icon-desc {
+    font-family: var(--sans, 'Manrope', -apple-system, sans-serif) !important;
+    font-size: 8.5px !important;
+    color: #6b645c !important;
+    margin: 0 !important;
+    line-height: 1.35 !important;
+    display: block !important;
+}
+
+/* Mobile responsive styles: 2x2 grid, hide description text, reduce title size */
+@media (max-width: 768px) {
+    .sustainability-icons-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 22px 14px !important;
+        margin-top: 36px !important;
+        margin-bottom: 12px !important;
+        padding: 0 8px !important;
+        width: 100% !important;
+    }
+
+    .sustainability-icon-item {
+        padding: 4px 6px !important;
+    }
+
+    .sustainability-icon-circle {
+        width: 48px !important;
+        height: 48px !important;
+        margin-bottom: 8px !important;
+    }
+
+    .sustainability-icon-circle svg {
+        width: 22px !important;
+        height: 22px !important;
+    }
+
+    /* Reduced size of title text on mobile */
+    .sustainability-icon-title {
+        font-size: 8.5px !important;
+        letter-spacing: 0.06em !important;
+        margin: 0 !important;
+        line-height: 1.25 !important;
+    }
+
+    /* ONLY on mobile: get rid of the description text completely */
+    .sustainability-icon-desc {
+        display: none !important;
     }
 }
 
@@ -3985,7 +4071,7 @@ p,
     position: relative !important;
     width: 100% !important;
     overflow: hidden !important;
-    padding: 16px 0 24px !important;
+    padding: 24px 0 32px !important;
 }
 
 /* Gradient edge fades for seamless entry/exit */
@@ -4017,8 +4103,8 @@ p,
 
 .partner-carousel-group {
     display: flex !important;
-    gap: clamp(20px, 2.8vw, 36px) !important;
-    padding-right: clamp(20px, 2.8vw, 36px) !important;
+    gap: clamp(24px, 3.2vw, 44px) !important;
+    padding-right: clamp(24px, 3.2vw, 44px) !important;
     flex-shrink: 0 !important;
     will-change: transform !important;
     animation: partnerScrollLeft 32s linear infinite !important;
@@ -4040,8 +4126,8 @@ p,
 
 /* Individual Partner Tile (Icons Only) */
 .partner-tile {
-    width: clamp(200px, 18vw, 270px) !important;
-    height: clamp(110px, 11vw, 145px) !important;
+    width: clamp(250px, 20vw, 320px) !important;
+    height: clamp(135px, 12vw, 170px) !important;
     background: transparent !important;
     border: none !important;
     box-shadow: none !important;
@@ -4059,7 +4145,7 @@ p,
 }
 
 .partner-tile:hover {
-    transform: scale(1.12) !important;
+    transform: scale(1.08) !important;
     background: transparent !important;
     box-shadow: none !important;
     border: none !important;
@@ -4087,18 +4173,54 @@ p,
 }
 
 .partner-tile:hover .partner-tile-logo-wrap img {
-    transform: scale(1.05) !important;
+    transform: scale(1.04) !important;
 }
 
-/* Burhan Real Estate logo scale boost to match visual weight of other logos */
+/* Burhan Real Estate: Natural scale & generous padding so bottom text 'Estate' is NEVER clipped */
 .partner-tile-logo-wrap img[src*="BURHAN"] {
-    max-height: calc(100% - 3px) !important;
-    transform: scale(1.35) !important;
-    transform-origin: center center !important;
+    max-height: 94% !important;
+    max-width: 90% !important;
+    transform: none !important;
 }
 
 .partner-tile:hover .partner-tile-logo-wrap img[src*="BURHAN"] {
-    transform: scale(1.42) !important;
+    transform: scale(1.04) !important;
+}
+
+/* Other partner logos: significantly larger & highly legible on PC and mobile */
+.partner-tile-logo-wrap img[src*="NATIONAL"] {
+    max-height: 98% !important;
+    max-width: 96% !important;
+    transform: scale(1.12) !important;
+    transform-origin: center center !important;
+}
+
+.partner-tile:hover .partner-tile-logo-wrap img[src*="NATIONAL"] {
+    transform: scale(1.16) !important;
+}
+
+.partner-tile-logo-wrap img[src*="REHMAN"] {
+    max-height: 96% !important;
+    max-width: 95% !important;
+    transform: scale(1.08) !important;
+    transform-origin: center center !important;
+}
+
+.partner-tile:hover .partner-tile-logo-wrap img[src*="REHMAN"] {
+    transform: scale(1.12) !important;
+}
+
+.partner-tile-logo-wrap img[src*="WALL"] {
+    max-width: 98% !important;
+    max-height: 90% !important;
+    width: auto !important;
+    transform: scale(1.18) !important;
+    transform-origin: center center !important;
+    filter: contrast(1.04) !important;
+}
+
+.partner-tile:hover .partner-tile-logo-wrap img[src*="WALL"] {
+    transform: scale(1.22) !important;
 }
 
 /* Call to action below carousel */
@@ -4139,7 +4261,7 @@ p,
     }
 
     .partner-carousel-wrapper {
-        padding: 12px 0 !important;
+        padding: 18px 0 24px !important;
     }
 
     .partner-carousel-fade {
@@ -4148,14 +4270,14 @@ p,
 
     .partner-carousel-group {
         animation-duration: 26s !important;
-        gap: 32px !important;
-        padding-right: 32px !important;
+        gap: 28px !important;
+        padding-right: 28px !important;
     }
 
     .partner-tile {
-        width: 210px !important;
-        height: 130px !important;
-        padding: 6px 10px !important;
+        width: 235px !important;
+        height: 140px !important;
+        padding: 6px 12px !important;
     }
 
     .partner-tile-logo-wrap {
@@ -4165,16 +4287,34 @@ p,
 
     .partner-tile-logo-wrap img {
         max-width: 100% !important;
-        max-height: 125px !important;
+        max-height: 135px !important;
         width: auto !important;
         height: auto !important;
         object-fit: contain !important;
     }
 
     .partner-tile-logo-wrap img[src*="BURHAN"] {
-        max-height: 119px !important;
-        transform: scale(1.36) !important;
-        transform-origin: center center !important;
+        max-height: 125px !important;
+        max-width: 92% !important;
+        transform: none !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="NATIONAL"] {
+        max-height: 132px !important;
+        max-width: 96% !important;
+        transform: scale(1.1) !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="REHMAN"] {
+        max-height: 130px !important;
+        max-width: 95% !important;
+        transform: scale(1.06) !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="WALL"] {
+        max-height: 110px !important;
+        max-width: 98% !important;
+        transform: scale(1.16) !important;
     }
 
     .partner-cta-wrap {
@@ -4184,23 +4324,47 @@ p,
 }
 
 @media (max-width: 480px) {
+    .partner-carousel-wrapper {
+        padding: 16px 0 22px !important;
+    }
+
     .partner-carousel-group {
-        gap: 26px !important;
-        padding-right: 26px !important;
+        gap: 22px !important;
+        padding-right: 22px !important;
     }
 
     .partner-tile {
-        width: 195px !important;
-        height: 120px !important;
-        padding: 4px 6px !important;
+        width: 215px !important;
+        height: 135px !important;
+        padding: 4px 8px !important;
     }
 
     .partner-tile-logo-wrap img {
-        max-height: 115px !important;
+        max-height: 125px !important;
     }
 
     .partner-tile-logo-wrap img[src*="BURHAN"] {
-        max-height: 109px !important;
+        max-height: 120px !important;
+        max-width: 92% !important;
+        transform: none !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="NATIONAL"] {
+        max-height: 125px !important;
+        max-width: 96% !important;
+        transform: scale(1.1) !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="REHMAN"] {
+        max-height: 125px !important;
+        max-width: 95% !important;
+        transform: scale(1.06) !important;
+    }
+
+    .partner-tile-logo-wrap img[src*="WALL"] {
+        max-height: 105px !important;
+        max-width: 98% !important;
+        transform: scale(1.16) !important;
     }
 }
 

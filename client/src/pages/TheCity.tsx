@@ -269,56 +269,110 @@ export default function TheCity() {
       {/* FOOTER */}
       <footer className="walk-footer reveal-section" style={{ backgroundImage: window.innerWidth > 768 ? "url('/footer_bg_desktop.jpeg')" : "url('/footer_bg_mobile.jpeg')", backgroundSize: "cover", backgroundPosition: window.innerWidth > 768 ? "center -300px" : "center", backgroundRepeat: "no-repeat" }}>
         <div className="footer-accordions">
-          {footerLinks.map(item => {
-            let learnMoreLink = "";
-            if (item === "The City") learnMoreLink = "/the-city";
-            else if (item === "Developer") learnMoreLink = "/developer";
-            else if (item === "FAQ") learnMoreLink = "/faq";
-            else if (item === "Partner") learnMoreLink = "/#partner";
-            else if (item === "Enquire") learnMoreLink = "/enquire";
+          <div className="footer-accordion-col">
+            {footerLinks.filter((_, i) => i % 2 === 0).map(item => {
+              let learnMoreLink = "";
+              if (item === "The City") learnMoreLink = "/the-city";
+              else if (item === "Developer") learnMoreLink = "/developer";
+              else if (item === "FAQ") learnMoreLink = "/faq";
+              else if (item === "Partner") learnMoreLink = "/#partner";
+              else if (item === "Enquire") learnMoreLink = "/enquire";
 
-            return (
-              <div className={openFooter === item ? "open" : ""} key={item}>
-                <button onClick={() => setOpenFooter(openFooter === item ? null : item)}>
-                  {item}
-                  <ChevronDown size={14} />
-                </button>
-                {openFooter === item && (
-                  <div>
-                    <p style={{ whiteSpace: "pre-line" }}>
-                      {footerDescriptions[item as keyof typeof footerDescriptions]}
-                    </p>
-                    {learnMoreLink && (
-                      <a
-                        href={learnMoreLink}
-                        style={{
-                          display: "inline-block",
-                          marginTop: "12px",
-                          color: "#b2996a",
-                          fontSize: "10px",
-                          letterSpacing: "2px",
-                          textTransform: "uppercase",
-                          textDecoration: "none",
-                          fontWeight: 500,
-                          transition: "all 0.3s ease"
-                        }}
-                        onMouseEnter={(e) => {
-                          (e.target as HTMLElement).style.opacity = "0.7";
-                          (e.target as HTMLElement).style.transform = "translateY(-2px)";
-                        }}
-                        onMouseLeave={(e) => {
-                          (e.target as HTMLElement).style.opacity = "1";
-                          (e.target as HTMLElement).style.transform = "translateY(0)";
-                        }}
-                      >
-                        LEARN MORE →
-                      </a>
-                    )}
-                  </div>
-                )}
-              </div>
-            );
-          })}
+              return (
+                <div className={openFooter === item ? "open" : ""} key={item}>
+                  <button onClick={() => setOpenFooter(openFooter === item ? null : item)}>
+                    {item}
+                    <ChevronDown size={14} />
+                  </button>
+                  {openFooter === item && (
+                    <div>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {footerDescriptions[item as keyof typeof footerDescriptions]}
+                      </p>
+                      {learnMoreLink && (
+                        <a
+                          href={learnMoreLink}
+                          style={{
+                            display: "inline-block",
+                            marginTop: "12px",
+                            color: "#b2996a",
+                            fontSize: "10px",
+                            letterSpacing: "2px",
+                            textTransform: "uppercase",
+                            textDecoration: "none",
+                            fontWeight: 500,
+                            transition: "all 0.3s ease"
+                          }}
+                          onMouseEnter={(e) => {
+                            (e.target as HTMLElement).style.opacity = "0.7";
+                            (e.target as HTMLElement).style.transform = "translateY(-2px)";
+                          }}
+                          onMouseLeave={(e) => {
+                            (e.target as HTMLElement).style.opacity = "1";
+                            (e.target as HTMLElement).style.transform = "translateY(0)";
+                          }}
+                        >
+                          LEARN MORE →
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+          <div className="footer-accordion-col">
+            {footerLinks.filter((_, i) => i % 2 === 1).map(item => {
+              let learnMoreLink = "";
+              if (item === "The City") learnMoreLink = "/the-city";
+              else if (item === "Developer") learnMoreLink = "/developer";
+              else if (item === "FAQ") learnMoreLink = "/faq";
+              else if (item === "Partner") learnMoreLink = "/#partner";
+              else if (item === "Enquire") learnMoreLink = "/enquire";
+
+              return (
+                <div className={openFooter === item ? "open" : ""} key={item}>
+                  <button onClick={() => setOpenFooter(openFooter === item ? null : item)}>
+                    {item}
+                    <ChevronDown size={14} />
+                  </button>
+                  {openFooter === item && (
+                    <div>
+                      <p style={{ whiteSpace: "pre-line" }}>
+                        {footerDescriptions[item as keyof typeof footerDescriptions]}
+                      </p>
+                      {learnMoreLink && (
+                        <a
+                          href={learnMoreLink}
+                          style={{
+                            display: "inline-block",
+                            marginTop: "12px",
+                            color: "#b2996a",
+                            fontSize: "10px",
+                            letterSpacing: "2px",
+                            textTransform: "uppercase",
+                            textDecoration: "none",
+                            fontWeight: 500,
+                            transition: "all 0.3s ease"
+                          }}
+                          onMouseEnter={(e) => {
+                            (e.target as HTMLElement).style.opacity = "0.7";
+                            (e.target as HTMLElement).style.transform = "translateY(-2px)";
+                          }}
+                          onMouseLeave={(e) => {
+                            (e.target as HTMLElement).style.opacity = "1";
+                            (e.target as HTMLElement).style.transform = "translateY(0)";
+                          }}
+                        >
+                          LEARN MORE →
+                        </a>
+                      )}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
         </div>
         <div className="footer-socials">
           <a href="https://instagram.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Instagram">

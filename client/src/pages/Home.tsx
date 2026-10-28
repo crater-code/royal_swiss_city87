@@ -76,28 +76,28 @@ const dealersData = [
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Authorized sales and marketing partner for Royal Swiss City, providing specialized real estate consultation, investment portfolio management, and premier residential and commercial opportunities.",
-    logo: "/NATIONAL MARKETING REAL ESTATE & BUILDERS.jpg"
+    logo: "/NATIONAL MARKETING REAL ESTATE & BUILDERS.jpg?v=4"
   },
   {
     name: "REHMAN PROPERTIES & MARKETING",
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Trusted real estate and marketing experts delivering bespoke property guidance, reliable plot bookings, and strategic investor support across Royal Swiss City.",
-    logo: "/REHMAN PROPERTIES & MARKETING.jpg"
+    logo: "/REHMAN PROPERTIES & MARKETING.jpg?v=4"
   },
   {
     name: "WALL.PK",
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Leading digital real estate network and authorized sales partner offering innovative marketing, transparent property advisory, and high-yield investment options at Royal Swiss City.",
-    logo: "/WALL.PK.jpg"
+    logo: "/WALL.PK.jpg?v=4"
   },
   {
     name: "BURHAN REAL ESTATE",
     type: "Authorized Sales Partner",
     location: "Lahore, Pakistan",
     description: "Distinguished property consultants committed to excellence, assisting clients and investors with premier residential and commercial plots at Royal Swiss City.",
-    logo: "/BURHAN REAL ESTATE.jpg?v=3"
+    logo: "/BURHAN REAL ESTATE.jpg?v=4"
   }
 ];
 
@@ -487,37 +487,37 @@ export default function Home() {
       <div style={{ display: "flex", flexDirection: "row", gap: "6vw", alignItems: "center", maxWidth: "100%", overflow: "hidden", paddingTop: window.innerWidth > 768 ? "20px" : "0px" }}><div style={{ flex: 1, minWidth: 0 }}><span className="section-kicker">THE FUTURE</span><h2 style={{ fontFamily: "var(--serif)", fontSize: "clamp(45px, 6vw, 85px)", fontWeight: 300, lineHeight: 0.84, marginBottom: "20px", color: "#1a3a52" }}>Built around<br /><em>sustainable living.</em></h2><p style={{ fontSize: "14px", lineHeight: 1.75, color: "#6b645c", maxWidth: "430px" }}>Royal Swiss City is designed with environmental responsibility at its core. From solar infrastructure to water management systems, every element reflects our commitment to creating a sustainable community for generations to come.</p></div></div>
 
       {/* Sustainability Icons */}
-      <div className="sustainability-icons-grid" style={{ display: "grid", gridTemplateColumns: window.innerWidth <= 370 ? "repeat(2, 1fr)" : "repeat(4, 1fr)", gap: window.innerWidth <= 370 ? "12px" : "30px", marginTop: window.innerWidth > 768 ? "85px" : "60px", marginBottom: "0px", textAlign: "center", padding: window.innerWidth <= 370 ? "0 12px" : "0" }}>
-        <div>
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1.5px solid #b2996aff", marginBottom: "12px" }}>
-            <Leaf size={28} color="#b2996aff" strokeWidth={1.5} />
+      <div className="sustainability-icons-grid">
+        <div className="sustainability-icon-item">
+          <div className="sustainability-icon-circle">
+            <Leaf size={24} color="#b2996a" strokeWidth={1.5} />
           </div>
-          <h3 style={{ fontSize: "11px", fontWeight: 600, color: "#1a3a52", margin: "0 0 4px 0", textTransform: "uppercase", letterSpacing: "0.08em" }}>GREEN SPACES</h3>
-          <p style={{ fontSize: "10px", color: "#6b645c", margin: "0", lineHeight: 1.4 }}>For a healthier life</p>
+          <h3 className="sustainability-icon-title">GREEN SPACES</h3>
+          <p className="sustainability-icon-desc">For a healthier life</p>
         </div>
 
-        <div>
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1.5px solid #b2996aff", marginBottom: "12px" }}>
-            <Droplets size={28} color="#b2996aff" strokeWidth={1.5} />
+        <div className="sustainability-icon-item">
+          <div className="sustainability-icon-circle">
+            <Droplets size={24} color="#b2996a" strokeWidth={1.5} />
           </div>
-          <h3 style={{ fontSize: "11px", fontWeight: 600, color: "#1a3a52", margin: "0 0 4px 0", textTransform: "uppercase", letterSpacing: "0.08em" }}>WATER SENSITIVE</h3>
-          <p style={{ fontSize: "10px", color: "#6b645c", margin: "0", lineHeight: 1.4 }}>Sustainable systems</p>
+          <h3 className="sustainability-icon-title">WATER SENSITIVE</h3>
+          <p className="sustainability-icon-desc">Sustainable systems</p>
         </div>
 
-        <div>
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1.5px solid #b2996aff", marginBottom: "12px" }}>
-            <Recycle size={28} color="#b2996aff" strokeWidth={1.5} />
+        <div className="sustainability-icon-item">
+          <div className="sustainability-icon-circle">
+            <Recycle size={24} color="#b2996a" strokeWidth={1.5} />
           </div>
-          <h3 style={{ fontSize: "11px", fontWeight: 600, color: "#1a3a52", margin: "0 0 4px 0", textTransform: "uppercase", letterSpacing: "0.08em" }}>CLEAN ENERGY</h3>
-          <p style={{ fontSize: "10px", color: "#6b645c", margin: "0", lineHeight: 1.4 }}>For a better future</p>
+          <h3 className="sustainability-icon-title">CLEAN ENERGY</h3>
+          <p className="sustainability-icon-desc">For a better future</p>
         </div>
 
-        <div>
-          <div style={{ display: "inline-flex", alignItems: "center", justifyContent: "center", width: "60px", height: "60px", borderRadius: "50%", border: "1.5px solid #b2996aff", marginBottom: "12px" }}>
-            <Users size={28} color="#b2996aff" strokeWidth={1.5} />
+        <div className="sustainability-icon-item">
+          <div className="sustainability-icon-circle">
+            <Users size={24} color="#b2996a" strokeWidth={1.5} />
           </div>
-          <h3 style={{ fontSize: "11px", fontWeight: 600, color: "#1a3a52", margin: "0 0 4px 0", textTransform: "uppercase", letterSpacing: "0.08em" }}>COMMUNITY FIRST</h3>
-          <p style={{ fontSize: "10px", color: "#6b645c", margin: "0", lineHeight: 1.4 }}>Stronger together</p>
+          <h3 className="sustainability-icon-title">COMMUNITY FIRST</h3>
+          <p className="sustainability-icon-desc">Stronger together</p>
         </div>
       </div>
     </section>
@@ -703,16 +703,68 @@ export default function Home() {
         </div>
       </div>
     </section>
-    <footer className="walk-footer reveal-section" style={{ backgroundImage: window.innerWidth > 768 ? "url('/footer_bg_desktop.jpeg')" : "url('/footer_bg_mobile.jpeg')", backgroundSize: "cover", backgroundPosition: window.innerWidth > 768 ? "center -300px" : "center", backgroundRepeat: "no-repeat" }}><div className="footer-accordions">{footerLinks.map(item => {
-      let learnMoreLink = "";
-      if (item === "The City") learnMoreLink = "/the-city";
-      else if (item === "Developer") learnMoreLink = "/developer";
-      else if (item === "FAQ") learnMoreLink = "/faq";
-      else if (item === "Partner") learnMoreLink = "/#partner";
-      else if (item === "Enquire") learnMoreLink = "/enquire";
+    <footer className="walk-footer reveal-section" style={{ backgroundImage: window.innerWidth > 768 ? "url('/footer_bg_desktop.jpeg')" : "url('/footer_bg_mobile.jpeg')", backgroundSize: "cover", backgroundPosition: window.innerWidth > 768 ? "center -300px" : "center", backgroundRepeat: "no-repeat" }}>
+      <div className="footer-accordions">
+        <div className="footer-accordion-col">
+          {footerLinks.filter((_, i) => i % 2 === 0).map(item => {
+            let learnMoreLink = "";
+            if (item === "The City") learnMoreLink = "/the-city";
+            else if (item === "Developer") learnMoreLink = "/developer";
+            else if (item === "FAQ") learnMoreLink = "/faq";
+            else if (item === "Partner") learnMoreLink = "/#partner";
+            else if (item === "Enquire") learnMoreLink = "/enquire";
 
-      return <div className={openFooter === item ? "open" : ""} key={item}><button onClick={() => setOpenFooter(openFooter === item ? null : item)}>{item}<ChevronDown size={14} /></button>{openFooter === item && <div><p style={{ whiteSpace: "pre-line" }}>{footerDescriptions[item as keyof typeof footerDescriptions]}</p>{learnMoreLink && <a href={learnMoreLink} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>LEARN MORE →</a>}</div>}</div>
-    })}</div><div className="footer-socials"><a href="https://instagram.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Instagram"><Instagram size={24} /></a><a href="https://facebook.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Facebook"><Facebook size={24} /></a><a href="https://tiktok.com/@royalswisscity" target="_blank" rel="noopener noreferrer" title="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 0 1-2.4 2.4 2.4 2.4 0 0 1-2.4-2.4 2.4 2.4 0 0 1 2.4-2.4c.34 0 .67.05.98.15V9.41a5.81 5.81 0 0 0-.98-.08 6.04 6.04 0 0 0-6.04 6.04 6.04 6.04 0 0 0 6.04 6.04 6.04 6.04 0 0 0 6.04-6.04v-3.1a7.7 7.7 0 0 0 3.77 1.01V9.81a4.77 4.77 0 0 1-.77-.06z" /></svg></a><a href="https://linkedin.com/company/royalswisscity" target="_blank" rel="noopener noreferrer" title="LinkedIn"><Linkedin size={24} /></a><a href="https://youtube.com/@royalswisscity" target="_blank" rel="noopener noreferrer" title="YouTube"><Youtube size={24} /></a><a href="https://x.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="X"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.637l-5.1-6.694-5.867 6.694h-3.306l7.733-8.835L2.25 2.25h6.814l4.882 6.45L18.244 2.25zM17.083 18.386h1.83L6.959 4.155H5.049l12.034 14.231z" /></svg></a></div><div className="footer-contact"><b>Where life happens.</b><span>© 2026 ROYAL SWISS CITY · PRIVACY POLICY · SITEMAP</span></div></footer>
+            return (
+              <div className={openFooter === item ? "open" : ""} key={item}>
+                <button onClick={() => setOpenFooter(openFooter === item ? null : item)}>
+                  {item}
+                  <ChevronDown size={14} />
+                </button>
+                {openFooter === item && (
+                  <div>
+                    <p style={{ whiteSpace: "pre-line" }}>{footerDescriptions[item as keyof typeof footerDescriptions]}</p>
+                    {learnMoreLink && (
+                      <a href={learnMoreLink} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
+                        LEARN MORE →
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+        <div className="footer-accordion-col">
+          {footerLinks.filter((_, i) => i % 2 === 1).map(item => {
+            let learnMoreLink = "";
+            if (item === "The City") learnMoreLink = "/the-city";
+            else if (item === "Developer") learnMoreLink = "/developer";
+            else if (item === "FAQ") learnMoreLink = "/faq";
+            else if (item === "Partner") learnMoreLink = "/#partner";
+            else if (item === "Enquire") learnMoreLink = "/enquire";
+
+            return (
+              <div className={openFooter === item ? "open" : ""} key={item}>
+                <button onClick={() => setOpenFooter(openFooter === item ? null : item)}>
+                  {item}
+                  <ChevronDown size={14} />
+                </button>
+                {openFooter === item && (
+                  <div>
+                    <p style={{ whiteSpace: "pre-line" }}>{footerDescriptions[item as keyof typeof footerDescriptions]}</p>
+                    {learnMoreLink && (
+                      <a href={learnMoreLink} style={{ display: "inline-block", marginTop: "12px", color: "#b2996a", fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", textDecoration: "none", fontWeight: 500, transition: "all 0.3s ease" }} onMouseEnter={(e) => { (e.target as HTMLElement).style.opacity = "0.7"; (e.target as HTMLElement).style.transform = "translateY(-2px)"; }} onMouseLeave={(e) => { (e.target as HTMLElement).style.opacity = "1"; (e.target as HTMLElement).style.transform = "translateY(0)"; }}>
+                        LEARN MORE →
+                      </a>
+                    )}
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
+      </div>
+      <div className="footer-socials"><a href="https://instagram.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Instagram"><Instagram size={24} /></a><a href="https://facebook.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="Facebook"><Facebook size={24} /></a><a href="https://tiktok.com/@royalswisscity" target="_blank" rel="noopener noreferrer" title="TikTok"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.68v13.67a2.4 2.4 0 0 1-2.4 2.4 2.4 2.4 0 0 1-2.4-2.4 2.4 2.4 0 0 1 2.4-2.4c.34 0 .67.05.98.15V9.41a5.81 5.81 0 0 0-.98-.08 6.04 6.04 0 0 0-6.04 6.04 6.04 6.04 0 0 0 6.04 6.04 6.04 6.04 0 0 0 6.04-6.04v-3.1a7.7 7.7 0 0 0 3.77 1.01V9.81a4.77 4.77 0 0 1-.77-.06z" /></svg></a><a href="https://linkedin.com/company/royalswisscity" target="_blank" rel="noopener noreferrer" title="LinkedIn"><Linkedin size={24} /></a><a href="https://youtube.com/@royalswisscity" target="_blank" rel="noopener noreferrer" title="YouTube"><Youtube size={24} /></a><a href="https://x.com/royalswisscity" target="_blank" rel="noopener noreferrer" title="X"><svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24h-6.637l-5.1-6.694-5.867 6.694h-3.306l7.733-8.835L2.25 2.25h6.814l4.882 6.45L18.244 2.25zM17.083 18.386h1.83L6.959 4.155H5.049l12.034 14.231z" /></svg></a></div><div className="footer-contact"><b>Where life happens.</b><span>© 2026 ROYAL SWISS CITY · PRIVACY POLICY · SITEMAP</span></div></footer>
 
     <div className={`mobile-menu ${menuOpen ? "open" : ""}`}>
       <div className="mobile-menu__top">
